@@ -1,6 +1,6 @@
 import sys
 import heapq
-#input=sys.stdin.readline
+input=sys.stdin.readline
 pQ=[]
 inf=int(1e9)
 V=int(input())
@@ -26,6 +26,6 @@ while pQ:
         if distance[u]!=inf and distance[v]>distance[u]+w:
             flag=1
             distance[v]=distance[u]+w
-        if flag==1:
+        if flag==1 and visit[v]==0:
             heapq.heappush(pQ,[distance[v],v])
 print(distance[f])
